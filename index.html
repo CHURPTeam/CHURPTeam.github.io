@@ -130,6 +130,65 @@
       }
     }
 
+    @media only screen and (max-width: 767px) {
+  [class*="mobile hidden"],
+  [class*="tablet only"]:not(.mobile),
+  [class*="computer only"]:not(.mobile),
+  [class*="large screen only"]:not(.mobile),
+  [class*="widescreen only"]:not(.mobile),
+  [class*="or lower hidden"] {
+    display: none !important;
+  }
+  }
+
+    /* Tablet / iPad Portrait */
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      [class*="mobile only"]:not(.tablet),
+      [class*="tablet hidden"],
+      [class*="computer only"]:not(.tablet),
+      [class*="large screen only"]:not(.tablet),
+      [class*="widescreen only"]:not(.tablet),
+      [class*="or lower hidden"]:not(.mobile) {
+        display: none !important;
+      }
+    }
+
+    /* Computer / Desktop / iPad Landscape */
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      [class*="mobile only"]:not(.computer),
+      [class*="tablet only"]:not(.computer),
+      [class*="computer hidden"],
+      [class*="large screen only"]:not(.computer),
+      [class*="widescreen only"]:not(.computer),
+      [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+        display: none !important;
+      }
+    }
+
+    /* Large Monitor */
+    @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+      [class*="mobile only"]:not([class*="large screen"]),
+      [class*="tablet only"]:not([class*="large screen"]),
+      [class*="computer only"]:not([class*="large screen"]),
+      [class*="large screen hidden"],
+      [class*="widescreen only"]:not([class*="large screen"]),
+      [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+        display: none !important;
+      }
+    }
+
+    /* Widescreen Monitor */
+    @media only screen and (min-width: 1920px) {
+      [class*="mobile only"]:not([class*="widescreen"]),
+      [class*="tablet only"]:not([class*="widescreen"]),
+      [class*="computer only"]:not([class*="widescreen"]),
+      [class*="large screen only"]:not([class*="widescreen"]),
+      [class*="widescreen hidden"],
+      [class*="widescreen or lower hidden"] {
+        display: none !important;
+      }
+    }
+
 
   </style>
 
@@ -204,24 +263,36 @@
       </div>
     </div>
 
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+
 
     <div class="ui text container">
-      <h1 class="ui inverted header">
-        CHURP
-      </h1>
-      <h2>Decentralize your secrets!</h2>
-    <div>
+      <div class="ui text container">
+         <img src="img/monochrome-logo.png" class="ui rounded image">
+      </div>
+      <div>
         <a href="https://github.com/CHURPTeam/CHURP">
         <div class="ui huge primary button" tabindex="0">
-            Code <i class="right arrow icon"></i>
+          <i class="github icon"></i> Code <i class="right arrow icon"></i>
         </div>
         </a>
         <a href="https://eprint.iacr.org/2019/017.pdf">
         <div class="ui huge primary button" tabindex="0">
-            Full Paper <i class="right arrow icon"></i>
+          <i class="file icon"></i> Full Paper <i class="right arrow icon"></i>
         </div>
         </a>
-    </div>
+      </div>
 
     </div>
 
