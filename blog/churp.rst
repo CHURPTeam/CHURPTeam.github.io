@@ -18,7 +18,7 @@ It's also why the hapless users of cryptocurrency in question aren't "they." The
 
 Wouldn't it be nice if *true decentralization* were within the grasp of ordinary users, if there were a system that: (1) made user key management easier and (2) was itself actually decentralized? And, even better, if it could: (3) manage keys for entities that can't store secrets, such as smart contracts?
 
-These are the goals of `CHURP <http://www.churp.io>`__ (CHUrn-Robust Proactivization), a new system we've developed at IC3 and presented in a paper `here <https://eprint.iacr.org/2019/017.pdf>`__. CHURP is an `open-source <https://github.com/CHURPTeam/CHURP>`__ project already on the current product roadmap of `Oasis Labs <https://www.oasislabs.com/>`__, and we hope to see it used in many other places.
+These are the goals of `CHURP <website_>`_ (CHUrn-Robust Proactivization), a new system we've developed at IC3 and presented in a paper_. CHURP is an `open-source <code_>`_ project already on the current product roadmap of `Oasis Labs <https://www.oasislabs.com/>`_, and we hope to see it used in many other places.
 
 Committees: Here today, gone tomorrow
 -------------------------------------
@@ -69,8 +69,8 @@ In particular, in the above example, node A2 could give its share to node B2 bef
 This adversary could corrupt nodes A1 and A2 in the old committee and B2 and B3 in the new committee. Thus the adversary learns a new share through node B3.
 The adversary thus learns 3 shares in total. Since we're using a (2,5)-secret sharing, she thus learns *SK*, breaking the system. [1]_
 
-CHURP
------
+CHURP Comes To Rescue
+---------------------
 
 In a nutshell, CHURP is a proactive secret-sharing system that solves the above problem, and handles committee churn securely. It's not the first system to do this, but it's the first practical one.
 
@@ -79,7 +79,10 @@ The key innovation in CHURP is something called *dimension-switching*. Suppose, 
 Dimension-switching essentially "dilutes" the secret shares thus preventing leakage despite the adversary learning more during the handoff.
 CHURP uses bivariate polynomials (two dimensional polynomials) to share the secret.
 Switching from (2,5)-sharing to (4,5)-sharing can be achieved by switching between the two dimensions of the bivariate polynomial.
-For more details of our construction, please refer to the `full paper <https://eprint.iacr.org/2019/017.pdf>`__.
+For more details of our construction, please refer to the `full paper`__.
+
+__ paper_
+
 
 Another key innovation in CHURP is a tiered protocol that achieves high performance and strong robustness simultaneously. By default, CHURP uses an *optimistic* path.
 It assumes that *all* nodes execute the specified protocol correctly. In this case CHURP is highly efficient.
