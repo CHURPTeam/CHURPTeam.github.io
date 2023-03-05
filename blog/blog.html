@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Decentralize Your Secrets with CHURP</title>
+<meta name="author" content="Deepak Maram and Fan Zhang and Ari Juels" />
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="decentralize-your-secrets-with-churp">
+<h1 class="title">Decentralize Your Secrets with CHURP</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>Deepak Maram and Fan Zhang and Ari Juels</td></tr>
+<tr class="field"><th class="docinfo-name">time:</th><td class="field-body">09:30</td>
+</tr>
+<tr class="field"><th class="docinfo-name">updated:</th><td class="field-body">2019-03-12T09:30</td>
+</tr>
+<tr class="field"><th class="docinfo-name">summary:</th><td class="field-body">Achieving true decentralization requires decentralized cryptography. CHURP is a cryptographic protocol for secret sharing in decentralized settings. In such a setting where nodes may come and go, traditional secret sharing (e.g., Shamir's) is no longer secure. Featuring several fundamental innovations, CHURP accomplishes the mission while being at least three orders of magnitude (1000x) more efficient than previous schemes for large committees!</td>
+</tr>
+<tr class="field"><th class="docinfo-name">tags:</th><td class="field-body">secret sharing, key loss, decentralization</td>
+</tr>
+</tbody>
+</table>
+<p>At the heart of decentralized systems today is a demoralizing irony. Vast resources---intellect, equipment, and energy---go into avoiding centralized control and creating &quot;trustless&quot; systems like Bitcoin.
+But hapless users then defeat the whole purpose of these systems by handing over their private keys to <strong>centralized</strong> entities like Coinbase. Or worse still, they lose their keys, sending about <strong>$14 billion</strong> in Bitcoin into a black hole (according to an <a class="reference external" href="http://fortune.com/2017/11/25/lost-bitcoins/">estimate</a> made two years ago).</p>
+<p>But who can blame them? Even experts find key management hard. That's why, decades after its invention, public-key cryptography is rarely used for things as simple as e-mail encryption.</p>
+<p>It's also why the hapless users of cryptocurrency in question aren't &quot;they.&quot; They're also &quot;we.&quot; Even at IC3, some of us shamefacedly use Coinbase instead of managing our own keys.</p>
+<p>Wouldn't it be nice if <em>true decentralization</em> were within the grasp of ordinary users, if there were a system that: (1) made user key management easier and (2) was itself actually decentralized? And, even better, if it could: (3) manage keys for entities that can't store secrets, such as smart contracts?</p>
+<p>These are the goals of <a class="reference external" href="http://churp.io">CHURP</a> (CHUrn-Robust Proactivization), a new system we've developed at IC3 and presented in a <a class="reference external" href="https://eprint.iacr.org/2019/017.pdf">paper</a>. CHURP is an <a class="reference external" href="https://github.com/CHURPTeam/CHURP">open-source</a> project already in plans for further development and adoption at <a class="reference external" href="https://www.oasislabs.com/">Oasis Labs</a>, and we hope to see it used in many other places.</p>
+<div class="section" id="committees-here-today-gone-tomorrow">
+<h1>Committees: Here today, gone tomorrow</h1>
+<p>Decentralized key management, like single-user key management, is easy in principle. A <em>committee</em> of <em>n</em> nodes can hold a private key <em>SK</em> that is distributed using <a class="reference external" href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">(t,n)-secret sharing</a>.
+An adversary must then corrupt <em>t+1</em> nodes in order to steal <em>SK</em>. This creates a strong obstacle to compromise.</p>
+<p>Any <em>t+1</em> nodes can act in concert to access <em>SK</em>, ensuring high uptime. In fact, by means of <em>threshold cryptography</em>, nodes can perform operations with <em>SK</em> using individual shares, never explicitly reassembling and exposing <em>SK</em>.
+The figure below shows a (2,5)-secret sharing. Each of the five nodes (A1, A2, ..., A5) has a share (the small blue square) of the secret (the orange oval). Any three nodes can jointly compute the secret. The idea is similar to <em>multisig</em> addresses in cryptocurrency.</p>
+<div class="figure">
+<img alt="(2, 5)-secret sharing" class="no-border" src="images/churp1.png" style="width: 400px;" />
+<p class="caption">An example of (2, 5)-Shamir secret sharing.</p>
+</div>
+<p>A number of decentralized systems, e.g., Enigma, Calypso and Coconut make use of such key management via committees. It's a compelling option, but there are some lurking problems.</p>
+<p>The first problem is the risk of <em>mobile adversaries</em>. It may be hard for an adversary to compromise <em>t+1</em> nodes in a short space of time.
+If a static set of nodes stores <em>SK</em> indefinitely, though, an adversary can attack nodes <em>gradually</em>, ultimately corrupting the <em>t+1</em> it needs to learn <em>SK</em>.</p>
+<p>The classical countermeasure to mobile adversaries, devised in the 1990s, is known as <em>proactivization</em>. Nodes periodically <em>refresh</em> their shares, i.e., perform a fresh secret-sharing of <em>SK</em>. If proactivization happens on, say, a daily basis, then the shares that an adversary compromised yesterday no longer count today. In our (2,5)-secret sharing example, if the adversary compromised 2 shares yesterday and 2 today, despite having 4 shares, she can't reassemble <em>SK</em>. Yesterday's shares aren't compatible with today's.
+Proactivization forces an adversary not just to compromise <em>t</em> nodes, but to do so quickly, before a refresh happens.</p>
+<p>There's a second big problem, though---particularly in decentralized systems. <em>Nodes may enter and leave the system.</em> Thus the set of nodes in a committee may change over time, i.e., they're subject to <em>churn</em>.</p>
+<p>Churn is a problem that existing secret-sharing schemes, even proactive ones---simply don't solve.</p>
+</div>
+<div class="section" id="churn-is-a-challenge">
+<h1>Churn is a Challenge</h1>
+<p>In order to understand why committee churn is not an easy problem, let's consider a naive strategy for handling it.</p>
+<div class="figure">
+<img alt="Handoff between two committees" class="no-border" src="images/churp2.png" style="width: 500px;" />
+<p class="caption">Handoff between two committees.</p>
+</div>
+<p>The figure above shows two committees---equal-sized old and new committees. Due to churn, some nodes in the old committee leave (A2 and A3), while new nodes replace them (B2 and B3).
+For the purpose of this example, assume that both the committees use (2,5)-secret sharing for some secret <em>SK</em>. (2,5)-secret sharing is meant to protect against compromise of two nodes.
+So let's assume that a mobile adversary can control two nodes in <em>each of the old and new committees.</em></p>
+<p>A naive strategy might directly transfer shares between the old nodes and the corresponding new ones that replace them.
+In particular, in the above example, node A2 could give its share to node B2 before leaving, while node A3 could give its share to node B3. But this quickly falls apart in the face of a mobile adversary.
+This adversary could corrupt nodes A1 and A2 in the old committee and B2 and B3 in the new committee. Thus the adversary learns a new share through node B3.
+The adversary thus learns 3 shares in total. Since we're using a (2,5)-secret sharing, she thus learns <em>SK</em>, breaking the system. <a class="footnote-reference" href="#id3" id="id1">[1]</a></p>
+</div>
+<div class="section" id="churp-comes-to-rescue">
+<h1>CHURP Comes To Rescue</h1>
+<p>In a nutshell, CHURP is a proactive secret-sharing system that solves the above problem, and handles committee churn securely. It's not the first system to do this, but it's the first practical one.</p>
+<p>The key innovation in CHURP is something called <em>dimension-switching</em>. Suppose, in our example above, it were somehow possible to switch temporarily from a (2,5)-sharing of <em>SK</em> to a (4,5)-sharing during the handoff from the old committee to a new one. Then, despite being able to learn 3 shares, the adversary would not learn <em>SK</em>.</p>
+<p>Dimension-switching essentially &quot;dilutes&quot; the secret shares thus preventing leakage despite the adversary learning more during the handoff.
+CHURP uses bivariate polynomials (two dimensional polynomials) to share the secret.
+Switching from (2,5)-sharing to (4,5)-sharing can be achieved by switching between the two dimensions of the bivariate polynomial.
+For more details of our construction, please refer to the <a class="reference external" href="https://eprint.iacr.org/2019/017.pdf">full paper</a>.</p>
+<p>Another key innovation in CHURP is a tiered protocol that achieves high performance and strong robustness simultaneously. By default, CHURP uses an <em>optimistic</em> path.
+It assumes that <em>all</em> nodes execute the specified protocol correctly. In this case CHURP is highly efficient.
+If any node cheats (e.g., it sends malformed messages), however, CHURP can efficiently detect the fact and then switch to an alternative, <em>pessimistic</em> execution path.
+In this case, the protocol runs slower but is resilient to cheating players.
+The optimistic path in CHURP is especially communication-efficient.
+The best known protocol prior to CHURP [<a class="reference external" href="http://www.pmg.lcs.mit.edu/papers/a34-schultz.pdf">Schultz07</a>] incurs 5GB of network bandwidth for a 100-node committee.
+By comparison, CHURP (optimistic path) incurs only 2MB---a <strong>2300x</strong> improvement! In fact, even the pessimistic path of CHURP performs better than any previously known protocol.</p>
+<p>CHURP has some other bells and whistles. For example, it uses a trusted setup phase, as required by a special commitment scheme [<a class="reference external" href="https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf">Kate10</a>] that helps keep communication costs low.
+But if this trusted setup fails, CHURP still remains secure.
+The innovation here is a <em>hedge</em>---an additional verification step that detects compromised trusted setup and switches to a secondary
+pessimistic path that avoids the vulnerable commitment scheme, at the cost of some additional slowdown.</p>
+<p>Despite the technical intricacy, using CHURP in your project is easy. At a high level, CHURP provides a concise API that enables periodic committee rotation without changing the secret. We strongly encourage you to checkout the <a class="reference external" href="https://github.com/CHURPTeam/CHURP">code</a> and play with the demo.</p>
+</div>
+<div class="section" id="lots-of-applications">
+<h1>Lots of Applications</h1>
+<p>Blockchain systems, by nature, cannot store private data. The ability of CHURP to store and manage private keys through <em>dynamic</em> committees enables interesting applications without introducing centralization.
+Below, we briefly enumerate a few of the most important potential applications of CHURP.</p>
+<p>1) <em>Cryptocurrency Management:</em> Rather than relying on centralized exchanges to store private keys on behalf of users, or using hardware or software wallets,
+which are notoriously <a class="reference external" href="https://www.inc.com/yazin-akkawi/bitcoins-biggest-challenge-boils-down-to-two-letters-ux.html">difficult</a> to manage, users could instead store their private keys with committees.
+These committees could authenticate users and enforce access-control, resulting in the decentralized equivalent of today's exchanges.</p>
+<div class="figure">
+<img alt="Cryptocurrency" class="no-border" src="images/churp3.jpg" style="width: 200px;" />
+</div>
+<p>2) <em>Decentralized Identity:</em> Initiatives such as the <a class="reference external" href="https://identity.foundation/">Decentralized Identity Foundation</a>, which is backed by a number of major IT and services firms,
+envision an ecosystem in which users control their identities and data by means of private keys.
+Who will store these keys and how is an <a class="reference external" href="https://medium.com/uport/the-basics-of-decentralized-identity-d1ff01f15df1">open question</a>. The same techniques used for private key management would similarly apply to assets such as identities.</p>
+<div class="figure">
+<img alt="Identity" class="no-border" src="images/churp4.jpg" style="width: 200px;" />
+</div>
+<p>3) <em>Smart-contract attestations:</em> CHURP could augment smart contracts with confidential state, allowing them to, e.g., produce attestations regarding blockchain state change.
+Such signing would be of particular benefit in creating a simple smart-contract interface with <em>off-chain</em> systems.
+For example, control of Internet-of-Things (IoT) devices is a commonly proposed application of smart contracts
+(<a class="reference external" href="https://bitcoinmagazine.com/articles/slock-it-to-introduce-smart-locks-linked-to-smart-ethereum-contracts-decentralize-the-sharing-economy-1446746719/">smart locks</a> being a notable early example).
+If smart contracts cannot generate digital signatures, then the devices they control must monitor a blockchain, a resource intensive operation <a class="reference external" href="https://blog.slock.it/slock-it-iot-layer-f305601df963">infeasible</a> for IoT devices.
+A smart contract that can generate a digital signature, however, can simply issue authenticable commands to target devices.</p>
+<div class="figure">
+<img alt="Smart Lock" class="no-border" src="images/churp5.png" style="width: 200px;" />
+</div>
+<p>If you are interested in learning more about CHURP, please check out our <a class="reference external" href="http://churp.io">website</a>, <a class="reference external" href="https://github.com/CHURPTeam/CHURP">code</a>, or even the <a class="reference external" href="https://eprint.iacr.org/2019/017.pdf">paper</a>.
+We are excited to hear about any challenging use-cases for CHURP you might have!</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>There are other issues with this naive strategy such as the assumption of equal sized committees and that all nodes stay alive till the new replacing nodes join. We don't make any such assumptions in the actual protocol.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

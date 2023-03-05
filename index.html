@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134958030-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134958030-1');
+</script>
+
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>CHURP</title>
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
+
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .landing-image {
+      background-image: url('img/decentralized1.jpeg') !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+    }
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+  [class*="mobile hidden"],
+  [class*="tablet only"]:not(.mobile),
+  [class*="computer only"]:not(.mobile),
+  [class*="large screen only"]:not(.mobile),
+  [class*="widescreen only"]:not(.mobile),
+  [class*="or lower hidden"] {
+    display: none !important;
+  }
+  }
+
+    /* Tablet / iPad Portrait */
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      [class*="mobile only"]:not(.tablet),
+      [class*="tablet hidden"],
+      [class*="computer only"]:not(.tablet),
+      [class*="large screen only"]:not(.tablet),
+      [class*="widescreen only"]:not(.tablet),
+      [class*="or lower hidden"]:not(.mobile) {
+        display: none !important;
+      }
+    }
+
+    /* Computer / Desktop / iPad Landscape */
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      [class*="mobile only"]:not(.computer),
+      [class*="tablet only"]:not(.computer),
+      [class*="computer hidden"],
+      [class*="large screen only"]:not(.computer),
+      [class*="widescreen only"]:not(.computer),
+      [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+        display: none !important;
+      }
+    }
+
+    /* Large Monitor */
+    @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+      [class*="mobile only"]:not([class*="large screen"]),
+      [class*="tablet only"]:not([class*="large screen"]),
+      [class*="computer only"]:not([class*="large screen"]),
+      [class*="large screen hidden"],
+      [class*="widescreen only"]:not([class*="large screen"]),
+      [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+        display: none !important;
+      }
+    }
+
+    /* Widescreen Monitor */
+    @media only screen and (min-width: 1920px) {
+      [class*="mobile only"]:not([class*="widescreen"]),
+      [class*="tablet only"]:not([class*="widescreen"]),
+      [class*="computer only"]:not([class*="widescreen"]),
+      [class*="large screen only"]:not([class*="widescreen"]),
+      [class*="widescreen hidden"],
+      [class*="widescreen or lower hidden"] {
+        display: none !important;
+      }
+    }
+
+
+  </style>
+
+  <script src="semantic/dist/jquery.min.js"></script>
+  <script src="semantic/dist/components/visibility.js"></script>
+  <script src="semantic/dist/components/sidebar.js"></script>
+  <script src="semantic/dist/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a href="#top" class="item">Home</a>
+    <a href="#motivation" class="item">Motivation</a>
+    <a href="#what" class="item">What is CHURP?</a>
+    <a href="#how" class="item">Get Started</a>
+    <a href="#authors" class="item">About us</a>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+    <a href="#top" class="item">Home</a>
+    <a href="#motivation" class="item">Motivation</a>
+    <a href="#what" class="item">What is CHURP?</a>
+    <a href="#how" class="item">Get Started</a>
+    <a href="#authors" class="item">About us</a>
+</div>
+
+
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment landing-image">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+	    <a href="#top" class="item">Home</a>
+	    <a href="#motivation" class="item">Motivation</a>
+	    <a href="#what" class="item">What is CHURP?</a>
+	    <a href="#how" class="item">Get Started</a>
+	    <a href="#authors" class="item">About us</a>
+      </div>
+    </div>
+
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+    <div class="ui mobile hidden hidden divider"></div>
+
+
+    <div class="ui text container">
+      <div class="ui text container">
+         <img src="img/monochrome-logo.png" class="ui rounded image">
+      </div>
+      <div>
+        <a href="https://github.com/CHURPTeam/CHURP">
+        <div class="ui huge primary button" tabindex="0">
+          <i class="github icon"></i> Code <i class="right arrow icon"></i>
+        </div>
+        </a>
+        <a href="https://eprint.iacr.org/2019/017.pdf">
+        <div class="ui huge primary button" tabindex="0">
+          <i class="file icon"></i> Full Paper <i class="right arrow icon"></i>
+        </div>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="motivation" class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header"> <i class="exclamation triangle icon"></i> The irony of decentralization</h3>
+          <p>At the heart of decentralized systems today is a demoralizing irony. Vast resources---intellect, equipment, and energy---go into avoiding centralized control and creating "trustless" systems like Bitcoin. But hapless users then defeat the whole purpose of these systems by handing over their private keys to centralized entities like Coinbase. Or worse still, they lose their keys, sending approximately <a href="http://fortune.com/2017/11/25/lost-bitcoins/"> <b>$14+ billion</b> </a> in cryptocurrency to date into the celestial dustbin. </p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="img/anger.jpg" class="ui large bordered rounded image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="what" class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header">Would it be nice if there were a <i> truly decentralized system </i> that could support important applications like:</h3>
+	<div class="ui bulleted list large">
+	  <div class="item">Making key management easier for ordinary users.</div>
+	  <div class="item">Managing secret keys for transparent objects without secret state, like smart contracts.</div>
+	</div>
+      <p> Do so while operating seamlessly when nodes come and go. </p>
+    </div>
+
+      <h4 class="ui horizontal header divider">  </h4>
+    <div class="ui text container">
+      <h3 class="ui header">Have you heard about CHURP?</h3>
+      <p>You guessed it, CHURP achieves all the above goals. CHURP allows the set of nodes to change at regular intervals very efficiently---incurring atleast <b>1000x</b> less communication cost than state-of-the-art systems for large committees (size > 65). What's more, CHURP is secure under a strong mobile adversarial model! Read more about it in the <a href="https://eprint.iacr.org/2019/017.pdf"> ePrint version</a>. For a quick overview, read our <a href='http://hackingdistributed.com/2019/04/05/CHURP/'>blog post</a>.</p>
+    </div>
+  </div>
+
+  <div id="how" class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header"> <i class="code icon"></i> How to use CHURP?</h3>
+      <p>CHURP is open-source! If you’re a developer and would like to give it a try, visit the <a href="https://github.com/CHURPTeam/CHURP"> CHURP code repository</a>. We welcome your comments.</p>
+    </div>
+  </div>
+
+  <div id="authors" class="ui vertical stripe segment">
+      <h1 class="ui centered header">
+	<i class="users icon"></i> Team
+      </h1>
+      <h6 class="ui horizontal divider">  </h6>
+    <div class="ui centered stackable equal width grid">
+	<div class="row">
+	    	<div class="four wide column">
+		    <img class="left floated small ui image" src="img/deepak.png">
+		    <div class="ui header" > Sai Krishna Deepak Maram </div>
+		    <div class="meta">
+		        <button class="ui mini compact basic icon button"><a href=mailto:deepakrishna95@gmail.com><i class="mail icon"></i>Email</a></button>
+		        <button class="ui mini compact basic icon button"><a href="https://sites.google.com/view/deepak-maram/home"><i class="home icon"></i>Website</a></button>
+		    </div>
+		    <div class="description"><p>Deepak Maram is a second-year PhD student at Cornell Tech. His research interest spans systems security, blockchains, cryptography and their intersection.</p></div>
+	    	</div>
+		<div class="four wide column">
+		    <img class="left floated small ui image" src="https://www.initc3.org/images/people/fan.jpg">
+		    <div class="ui header" >Fan Zhang </div>
+		    <div class="meta">
+		        <button class="ui mini compact basic icon button"><a href=mailto:fanz@linux.com><i class="mail icon"></i>Email</a></button>
+		        <button class="ui mini compact basic icon button"><a href="http://www.cs.cornell.edu/~fanz/"><i class="home icon"></i>Website</a></button>
+		    </div>
+		    <div class="description"><p>Fan Zhang is a fifth-year PhD student at Cornell Tech. His research interest spans trusted hardware, cryptocurrencies and their intersection.</p></div>
+		</div>
+	</div>
+	<div class="row">
+	    	<div class="four wide column">
+		    <img class="left floated small ui image" src="img/lunwang.png">
+		    <div class="ui header" >Lun Wang </div>
+		    <div class="meta">
+		        <button class="ui mini compact basic icon button"><a href=mailto:wanglun@berkeley.edu><i class="mail icon"></i>Email</a></button>
+		        <button class="ui mini compact basic icon button"><a href="https://spartazhihu.github.io/"><i class="home icon"></i>Website</a></button>
+		    </div>
+		    <div class="description"><p>Lun Wang is a PhD student at the University of California, Berkeley.</p></div>
+	    	</div>
+		<div class="four wide column">
+		    <img class="left floated small ui image" src="img/andrew.jpeg">
+		    <div class="ui header" >Andrew Low </div>
+		    <div class="meta">
+		        <button class="ui mini compact basic icon button"><a href=mailto:andrew.low@berkeley.edu><i class="mail icon"></i>Email</a></button>
+		        <button class="ui mini compact basic icon button"><a href="https://www.linkedin.com/in/andrewlow7/"><i class="home icon"></i>Website</a></button>
+		    </div>
+		    <div class="description"><p>Andrew Low is a student at the University of California, Berkeley.</p></div>
+		</div>
+		<div class="four wide column">
+		    <img class="left floated small ui image" src="https://users.umiacs.umd.edu/~zhangyp/photo.jpeg">
+		    <div class="ui header" >Yupeng Zhang </div>
+		    <div class="meta">
+		        <button class="ui mini compact basic icon button"><a href=mailto:zhangyp@berkeley.edu><i class="mail icon"></i>Email</a></button>
+		        <button class="ui mini compact basic icon button"><a href="http://users.umiacs.umd.edu/~zhangyp/"><i class="home icon"></i>Website</a></button>
+		    </div>
+		    <div class="description"><p>Yupeng Zhang is a postdoctoral researcher at the University of California, Berkeley. Starting fall 2019, he will join Texas A&M University as an assistant professor.</p></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="four wide column">
+		    <img class="left floated small ui image" src="https://www.initc3.org/images/people/ari2.jpg">
+		    <div class="ui header" >Ari Juels </div>
+		    <div class="meta">
+		        <button class="ui mini compact basic icon button"><a href=mailto:juels@cornell.edu><i class="mail icon"></i>Email</a></button>
+		        <button class="ui mini compact basic icon button"><a href="http://www.arijuels.com"><i class="home icon"></i>Website</a></button>
+		    </div>
+		    <div class="description"><p>Ari Juels is a Professor at the Jacobs Technion-Cornell Institute at Cornell Tech in NYC and a Co-Director of IC3. He was previously Chief Scientist of RSA, The Security Division of EMC.</p></div>
+		</div>
+
+		<div class="four wide column">
+		    <img class="left floated small ui image" src="https://www.initc3.org/images/people/dawn.jpg">
+		    <div class="ui header" >Dawn Song </div>
+		    <div class="meta">
+		        <button class="ui mini compact basic icon button"><a href=mailto:dawnsong@cs.berkeley.edu><i class="mail icon"></i>Email</a></button>
+		        <button class="ui mini compact basic icon button"><a href="https://people.eecs.berkeley.edu/~dawnsong/"><i class="home icon"></i>Website</a></button>
+		    </div>
+		    <div class="description"><p>Dawn Song is a professor at the University of California, Berkeley, in the Electrical Engineering and Computer Science Department, and a Co-Director of IC3.</p></div>
+		</div>
+	</div>
+
+
+     </div>
+  </div>
+
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+
+	<a href="https://www.initc3.org/"><img src="img/ic3.png" style="width:50rem;"></img></a>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Links</h4>
+          <div class="ui inverted link list">
+	    <a href="#top" class="item">Home</a>
+	    <a href="#how" class="item">Get Started</a>
+            <a href="mailto:sm2686@cornell.edu" class="item">Report a bug</a>
+          </div>
+          <p>Built using <a href="https://semantic-ui.com/">Semantic UI</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
