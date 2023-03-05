@@ -1,3 +1,3 @@
 # CHURP
 
-churpteam.github.io
+https://churpteam.github.io
